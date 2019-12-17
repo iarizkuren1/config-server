@@ -1,0 +1,50 @@
+server:
+  servlet:
+    context-path: /
+  port: 8086
+
+logging:
+  level:
+    ROOT: INFO
+    org:
+      springframework:
+        web: INFO
+      apache: INFO
+
+management:
+  health:
+    diskspace:
+      enabled: false
+    db:
+      enabled: false
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: never
+
+textoEjemplo: "Texto Ejemplo"
+
+spring:
+  kafka:
+    consumer:
+      group-id: consumer_group_id_for_service
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/test
+    username: root
+    password:
+
+
+kafka:
+  topic:
+    nombre: NOMBRE
+
+#    password: rooT1234%
